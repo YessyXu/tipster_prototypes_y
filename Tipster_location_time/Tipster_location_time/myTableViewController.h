@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "myViewController.h"
 
 
 
-@interface myTableViewController : UITableViewController
+@interface myTableViewController : UITableViewController<myDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *locationDetailLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeDetailLabel;
+
+
 @end
 
 

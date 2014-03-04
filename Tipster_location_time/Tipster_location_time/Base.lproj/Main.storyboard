@@ -78,6 +78,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tipster" id="mRs-W6-CGP"/>
+                    <connections>
+                        <outlet property="locationDetailLabel" destination="wiK-VT-qTW" id="Xzv-7N-BbW"/>
+                        <outlet property="timeDetailLabel" destination="CnW-Si-vbR" id="TDk-LM-zec"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LET-PB-dMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +106,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="timeButtonPressed:" destination="VXA-0Y-uOZ" eventType="touchUpInside" id="UG4-ms-ANX"/>
+                                    <action selector="timeButtonPressed:" destination="VXA-0Y-uOZ" eventType="touchUpInside" id="S2h-2b-vdQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwN-SS-mJT">
@@ -121,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nd-wg-lu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3512" y="968"/>
+            <point key="canvasLocation" x="3567" y="976"/>
         </scene>
         <!--My View Controller-->
         <scene sceneID="VOo-4W-Al1">
@@ -142,7 +146,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="locationButtonPressed:" destination="ijb-g5-U3R" eventType="touchUpInside" id="a3D-k0-j2Y"/>
+                                    <action selector="locationButtonPressed:" destination="ijb-g5-U3R" eventType="touchUpInside" id="OG3-A6-8Fl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7El-Ka-GL7">
@@ -169,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgd-ev-T69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3864" y="528"/>
+            <point key="canvasLocation" x="3934" y="508"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tU0-ci-p6e">

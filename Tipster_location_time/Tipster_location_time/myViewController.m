@@ -15,12 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
-
-
-
-
-- (IBAction)locationButtonPressed:(id)sender;
-
+//get the location
 - (IBAction)timeButtonPressed:(id)sender;
 
 @end
@@ -51,9 +46,9 @@
     
     manager.delegate = self;
     manager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    
     [manager startUpdatingLocation];
+    
+    
 }
 
 - (IBAction)timeButtonPressed:(id)sender {
@@ -67,8 +62,17 @@
     if (hour>18) {
         
         self.timeLabel.text = @"Dinner time!";
+        _time = @"Dinner time";
         
-    }else self.timeLabel.text = @"Lunch time!";
+    }else {
+        
+        self.timeLabel.text = @"Lunch time!";
+        _time = @"Lunch time";
+    }
+    
+    [self.delegate changeTime:_time];
+
+    
 }
 
 
@@ -89,11 +93,12 @@
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error ==nil &&[placemarks count]>0) {
             placemark = [placemarks lastObject];
-            
+
+            _location = placemark.locality;
+            //pass the value to the dedial label
+            [self.delegate changeLocation:_location];
             self.cityLabel.text = [NSString stringWithFormat:@"City:%@ ",placemark.locality];
             self.stateLabel.text = [NSString stringWithFormat:@"State:%@",placemark.administrativeArea];
-
-            
             
         }else{
            NSLog(@"%@",error.debugDescription);

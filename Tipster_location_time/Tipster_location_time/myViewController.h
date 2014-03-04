@@ -8,7 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
+
+//prototype for value pass
+@protocol myDelegate <NSObject>
+
+
+-(void)changeLocation:(NSString *)value;
+-(void)changeTime:(NSString *)value;
+
+
+@end
+
+
 @interface myViewController : UIViewController
+
+@property (nonatomic,unsafe_unretained)id<myDelegate> delegate;
+
+@property (weak, nonatomic) NSString *location;
+@property (weak, nonatomic) NSString *time;
+
+
+- (IBAction)locationButtonPressed:(id)sender;
+- (IBAction)timeButtonPressed:(id)sender;
 
 
 @end
